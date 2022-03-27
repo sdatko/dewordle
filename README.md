@@ -1,6 +1,8 @@
 dewordle
 ========
 
+![](https://github.com/sdatko/dewordle/workflows/tests/badge.svg)
+
 Shell script for assisting in solving the Wordle quiz [1].
 
 It was created out of curiosity how such tool may look like.

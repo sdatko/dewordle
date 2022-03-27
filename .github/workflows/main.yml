@@ -1,0 +1,17 @@
+---
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Package installation
+        run: apk add shellcheck
+      - name: Shellcheck
+        run: shellcheck *.sh
