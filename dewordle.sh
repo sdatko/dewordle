@@ -77,15 +77,14 @@ fi
 # When no more letters, finishes with displaying the remaining standard input.
 #
 function filter_for_letters() {
-    letters="${1}"
-    n="${#letters}"
+    local letters="${1:-}"
+    local n="${#letters}"
 
     if [ "${n}" -eq 0 ]; then
         cat
     else
-        n=$(( n - 1 ))
-        letter="${1:0:1}"
-        remaining="${1:1:${n}}"
+        local letter="${letters:0:1}"
+        local remaining="${letters:1}"
 
         "${GREP_CMD[@]}" "${letter}" | filter_for_letters "${remaining}"
     fi
